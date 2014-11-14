@@ -1,12 +1,12 @@
-<h1>Listing medical_histories</h1>
+<h1>Listing of medical histories</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Bp</th>
-      <th>Temperature</th>
+      <th>BP</th>
+      <th>Temp</th>
       <th>Weight</th>
-      <th>Signsymptoms</th>
+      <th>Sign and symptoms</th>
       <th>Diagnosis</th>
       <th>Drugs</th>
       <th>Labtest</th>
@@ -14,24 +14,26 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody >
     <% @medical_histories.each do |medical_history| %>
-      <tr>
-        <td><%= medical_history.bp %></td>
-        <td><%= medical_history.temperature %></td>
-        <td><%= medical_history.weight %></td>
-        <td><%= medical_history.signsymptoms %></td>
-        <td><%= medical_history.diagnosis %></td>
-        <td><%= medical_history.drugs %></td>
-        <td><%= medical_history.labTest %></td>
-        <td><%= link_to 'Show', medical_history %></td>
-        <td><%= link_to 'Edit', edit_medical_history_path(medical_history) %></td>
-        <td><%= link_to 'Destroy', medical_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= medical_history.bp %></td>
+      <td><%= medical_history.temperature %></td>
+      <td><%= medical_history.weight %></td>
+      <td><%= medical_history.signsymptoms %></td>
+      <td><%= medical_history.diagnosis %></td>
+      <td><%= medical_history.drugs %></td>
+      <td><%= medical_history.labTest %></td>
+      <td><%= link_to 'Show', medical_history, class: "btn btn-primary btn-sm" %></td>
+      <td><%= link_to 'Edit', edit_medical_history_path(medical_history), class: "btn btn-primary btn-sm" %></td>
+      <td><%= link_to 'Destroy', medical_history, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"%></td>
+    </tr>
     <% end %>
+
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Medical history', new_medical_history_path %>
+<%= link_to 'New Medical history', new_medical_history_path , class: "btn btn-default" %>
+

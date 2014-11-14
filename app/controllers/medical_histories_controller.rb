@@ -30,8 +30,7 @@ class MedicalHistoriesController < ApplicationController
       if @medical_history.save
         format.html { redirect_to @medical_history, notice: 'Medical history was successfully created.' }
         format.json { render :show, status: :created, location: @medical_history }
-      else
-        format.html { render :new }
+      else     format.html { render :new }
         format.json { render json: @medical_history.errors, status: :unprocessable_entity }
       end
     end
@@ -71,4 +70,4 @@ class MedicalHistoriesController < ApplicationController
     def medical_history_params
       params.require(:medical_history).permit(:bp, :temperature, :weight, :signsymptoms, :diagnosis, :drugs, :labTest)
     end
-end
+  end

@@ -1,39 +1,42 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Bp:</strong>
-  <%= @medical_history.bp %>
-</p>
+<div class="row">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Temperature:</strong>
-  <%= @medical_history.temperature %>
-</p>
+  <p>
+    <strong>BP:</strong>
+    <%= @medical_history.bp %>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @medical_history.weight %>
-</p>
+  <p>
+    <strong>Temperature:</strong>
+    <%= @medical_history.temperature %>
+  </p>
 
-<p>
-  <strong>Signsymptoms:</strong>
-  <%= @medical_history.signsymptoms %>
-</p>
+  <p>
+    <strong>Weight:</strong>
+    <%= @medical_history.weight %>
+  </p>
 
-<p>
-  <strong>Diagnosis:</strong>
-  <%= @medical_history.diagnosis %>
-</p>
+  <p>
+    <strong>Signs and symptoms:</strong>
+    <%= @medical_history.signsymptoms %>
+  </p>
 
-<p>
-  <strong>Drugs:</strong>
-  <%= @medical_history.drugs %>
-</p>
+  <p>
+    <strong>Diagnosis:</strong>
+    <%= @medical_history.diagnosis %>
+  </p>
 
-<p>
-  <strong>Labtest:</strong>
-  <%= @medical_history.labTest %>
-</p>
+  <p>
+    <strong>Medications:</strong>
+    <%= @medical_history.drugs %>
+  </p>
 
-<%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
-<%= link_to 'Back', medical_histories_path %>
+  <p>
+    <strong>Lab test:</strong>
+    <%= @medical_history.labTest %>
+  </p>
+
+  <%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
+  <%= link_to 'Back', medical_histories_path %>
+</div>
