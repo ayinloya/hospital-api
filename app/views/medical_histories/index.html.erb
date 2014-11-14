@@ -1,0 +1,37 @@
+<h1>Listing medical_histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bp</th>
+      <th>Temperature</th>
+      <th>Weight</th>
+      <th>Signsymptoms</th>
+      <th>Diagnosis</th>
+      <th>Drugs</th>
+      <th>Labtest</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medical_histories.each do |medical_history| %>
+      <tr>
+        <td><%= medical_history.bp %></td>
+        <td><%= medical_history.temperature %></td>
+        <td><%= medical_history.weight %></td>
+        <td><%= medical_history.signsymptoms %></td>
+        <td><%= medical_history.diagnosis %></td>
+        <td><%= medical_history.drugs %></td>
+        <td><%= medical_history.labTest %></td>
+        <td><%= link_to 'Show', medical_history %></td>
+        <td><%= link_to 'Edit', edit_medical_history_path(medical_history) %></td>
+        <td><%= link_to 'Destroy', medical_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medical history', new_medical_history_path %>

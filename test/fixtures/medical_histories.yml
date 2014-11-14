@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bp: MyString
+  temperature: MyString
+  weight: 9.99
+  signsymptoms: MyText
+  diagnosis: MyText
+  drugs: MyText
+  labTest: MyText
+
+two:
+  bp: MyString
+  temperature: MyString
+  weight: 9.99
+  signsymptoms: MyText
+  diagnosis: MyText
+  drugs: MyText
+  labTest: MyText
