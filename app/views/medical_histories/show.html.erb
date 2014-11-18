@@ -2,7 +2,9 @@
 <div class="row">
   <p id="notice"><%= notice %></p>
 
-  <p>
+
+
+  <p class="">
     <strong>BP:</strong>
     <%= @medical_history.bp %>
   </p>
@@ -36,7 +38,11 @@
     <strong>Lab test:</strong>
     <%= @medical_history.labTest %>
   </p>
-
+  <p>
+    <strong>Date:</strong>
+    <%= @medical_history.created_at.to_formatted_s(:long_ordinal)  %>
+  </p>
   <%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
   <%= link_to 'Back', medical_histories_path %>
 </div>
+

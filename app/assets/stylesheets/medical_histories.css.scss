@@ -1,3 +1,32 @@
 // Place all the styles related to the medicalHistories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* 
+&dark_black: #222222;
+&black: #222200;
+
+table {
+  background-color: white;
+  padding: 1em;
+  &, * {
+    border-color: $black !important;
+  }
+  th {
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    background-color: $black;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      height: 5px;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: $dark-black;
+      position: absolute;
+    }
+  }
+} */
