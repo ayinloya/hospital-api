@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag(@patient.image) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Nssnumber:</strong>
+  <%= @patient.nssNumber %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+
+
+<%= render :partial => "patient_medical_history" %>
+<br>
+
+
