@@ -5,16 +5,18 @@ class MedicalHistoriesController < ApplicationController
   # GET /medical_histories.json
   def index
     @medical_histories = MedicalHistory.all
+
   end
 
   # GET /medical_histories/1
   # GET /medical_histories/1.json
   def show
+
   end
 
   # GET /medical_histories/new
   def new
-    @medical_history = MedicalHistory.new
+    @medical_history = MedicalHistory.new(patient_id: params[:patient])
   end
 
   # GET /medical_histories/1/edit
@@ -68,6 +70,6 @@ class MedicalHistoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medical_history_params
-      params.require(:medical_history).permit(:bp, :temperature, :weight, :signsymptoms, :diagnosis, :drugs, :labTest)
+      params.require(:medical_history).permit(:bp, :temperature, :weight, :signsymptoms, :diagnosis, :drugs, :labTest, :patient_id)
     end
   end
