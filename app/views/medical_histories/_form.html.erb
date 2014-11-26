@@ -1,6 +1,6 @@
 
+<%= form_for @medical_history, html: {role: "form"}  do |f| %>
 
-<%= form_for(@medical_history) do |f| %>
 <% if @medical_history.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@medical_history.errors.count, "error") %> prohibited this medical_history from being saved:</h2>
@@ -13,33 +13,33 @@
 </div>
 <% end %>
 
-<div class="field">
+<div class="field form-group">
   <%= f.label :bp %><br>
-  <%= f.text_field :bp %>
+  <%= f.text_field :bp, class: "form-control" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :temperature %><br>
-  <%= f.text_field :temperature %>
+  <%= f.text_field :temperature, class: "form-control" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :weight %><br>
-  <%= f.text_field :weight %>
+  <%= f.text_field :weight, class: "form-control" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :signsymptoms %><br>
-  <%= f.text_area :signsymptoms %>
+  <%= f.text_area :signsymptoms, class: "form-control", rows: "5" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :diagnosis %><br>
-  <%= f.text_area :diagnosis %>
+  <%= f.text_area :diagnosis, class: "form-control", rows: "5" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :drugs %><br>
-  <%= f.text_area :drugs %>
+  <%= f.text_area :drugs, class: "form-control", rows: "4" %>
 </div>
-<div class="field">
+<div class="field form-group">
   <%= f.label :labTest %><br>
-  <%= f.text_area :labTest %>
+  <%= f.text_area :labTest, class: "form-control", rows: "5" %>
 </div>
 <%= f.hidden_field :patient_id %>
 <div class="actions">

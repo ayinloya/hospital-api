@@ -1,34 +1,47 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <%= image_tag(@patient.image) %>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @patient.name %>
-</p>
 
-<p>
-  <strong>Nssnumber:</strong>
-  <%= @patient.nssNumber %>
-</p>
+<!-- <p id="notice"><%#= notice %></p> -->
 
-<p>
-  <strong>Age:</strong>
-  <%= @patient.age %>
-</p>
+<div class="col-md-2">
 
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
+  <p>
+    <%= if @patient.image? 
+      image_tag(@patient.image , :class => "img-thumbnail") 
+    else 
+      image_tag("default.png", id: "img_prev", alt: "no image",:class => "img-thumbnail")
+
+      end %>
+    </p>
+    <p>
+      <strong>Name:</strong>
+      <%= @patient.name %>
+    </p>
+
+    <p>
+      <strong>Nssnumber:</strong>
+      <%= @patient.nssNumber %>
+    </p>
+
+    <p>
+      <strong>Age:</strong>
+      <%= @patient.age %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= @patient.address %>
+    </p>
+
+    <%= link_to 'Edit', edit_patient_path(@patient) %> |
+    <%= link_to 'Back', patients_path %>
+
+  </div>
 
 
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+  <div class="col-md-9">
 
 
-<%= render :partial => "patient_medical_history" %>
-<br>
+    <%= render :partial => "patient_medical_history" %>
+
+  </div>
 
 

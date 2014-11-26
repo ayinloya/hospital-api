@@ -1,5 +1,11 @@
-<h1>New medical_history</h1>
+<div class="row">
 
-<%= render 'form' %>
+  <div class="col-md-1"></div>
+  <div class="col-md-8">
+    <h1>New medical_history</h1>
 
-<%= link_to 'Back', patient_path(@medical_history.patient_id) %>
+    <%= render 'form' %>
+
+    <%= link_to 'Back', patient_path(@medical_history.patient_id) %>
+  </div>
+</div>

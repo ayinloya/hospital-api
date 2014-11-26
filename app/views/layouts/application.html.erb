@@ -7,24 +7,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="main-container">
+  <%= render :partial => "shared/navigator" %>
+  <div class="container-fluid">
 
-    <%= render :partial => "shared/navigator" %>
 
-    <div class="container ">
-      <div class="col-lg-3">
-        
-      </div>
-      <div class="col-lg-9">
-        <div class="row">
-          <%= yield %>
-        </div>
-      </div>
+
+
+
+    <div class="col-md-1">
+
+    </div> 
+    <!-- show boostrap styled actions -->
+    <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+    <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
     </div>
+    <% end %>
+    <% end %>
+    <!-- end -->
+
+    <%= yield %>
+
 
   </div>
 
-  <%= render :partial => "shared/footer" %>
+  <footer class="footer">
+    <p >Creative heart - <%= Time.zone.now.year  %></p>
+  </footer>
 </body>
 </html>
 

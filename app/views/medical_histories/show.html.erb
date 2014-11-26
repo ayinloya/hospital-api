@@ -43,8 +43,9 @@
     <%= @medical_history.created_at.to_formatted_s(:long_ordinal)  %>
   </p>
   <%= link_to 'Edit', edit_medical_history_path(@medical_history) %> |
+
   <%= link_to 'List of Medical Records', medical_histories_path %> | 
-  <%= link_to 'Back', patient_path(@medical_history.patient_id) %>
+  <%= link_to 'Back', patient_path(@medical_history.patient_id) if @medical_history.patient_id %>
 
 </div>
 

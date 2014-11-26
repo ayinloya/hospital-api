@@ -11,7 +11,7 @@
       };
 
       reader.readAsDataURL(input.files[0]);
-    }
+    } 
   }
 </script>
 
@@ -23,48 +23,64 @@
 
 
 
-<%= form_for @patient, :html => {:multipart => true} do |f| %>
-<% if @patient.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+<%= form_for @patient, :html => {:multipart => true}, role:"form" do |f| %>
+<div class="col-md-5">
 
-  <ul>
-    <% @patient.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+  <div class="field form-group">
+    <%= f.file_field :image , accept: 'image/png,image/gif,image/jpeg',onchange: "readURL(this);"%>
+    <div class="thumpnails">
+
+      <%= 
+      if @patient.image?
+        image_tag(@patient.image_url, id: "img_prev", class: "img-thumpnail")
+      else
+        image_tag("default.png", id: "img_prev", alt: "no image")
+        end %>
+        <%= f.hidden_field :image_cache %>
+
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+  </div>
+
+  <div class="col-md-7">
+
+    <% if @patient.errors.any? %>
+    <div id="error_explanation" class="danger" >
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+        <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
     <% end %>
-  </ul>
-</div>
-<% end %>
 
-<div class="field">
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-</div>
-<div class="field">
-  <%= f.label :nssNumber %><br>
-  <%= f.number_field :nssNumber %>
-</div>
-<div class="field">
-  <%= f.label :age %><br>
-  <%= f.number_field :age %>
-</div>
-<div class="field">
-  <%= f.label :address %><br>
-  <%= f.text_area :address %>
-</div>
-<div class="field">
-  <%= f.file_field :image , accept: 'image/png,image/gif,image/jpeg',onchange: "readURL(this);"%>
 
-  <%= 
-  if @patient.image?
-    image_tag(@patient.image_url, id: "img_prev")
-  else
-    image_tag("", id: "img_prev", alt: "no image")
-    end %>
-    <%= f.hidden_field :image_cache %>
+    <div class="field form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="field  form-group">
+      <%= f.label :nssNumber %><br>
+      <%= f.number_field :nssNumber, class: "form-control"  %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :age %><br>
+      <%= f.number_field :age,  class: "form-control"  %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :address %><br>
+      <%= f.text_area :address, class: "form-control"  %>
+    </div>
 
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+
   <% end %>
+
