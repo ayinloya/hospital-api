@@ -4,7 +4,17 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all.order("created_at DESC")
+
+
+
+    # if params[:q]
+    #   @patient = Patient.search(params[:q]).order("created_at DESC")
+
+
+    # else
+    #   @patient = Patient.all
+    # end
   end
 
   # GET /patients/1
@@ -56,7 +66,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
     respond_to do |format|
-      format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
+      format.html { redirect_to patients_url, notice: 'Patient was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -71,4 +81,4 @@ class PatientsController < ApplicationController
     def patient_params
       params.require(:patient).permit(:name, :nssNumber, :age, :address, :image)
     end
-end
+  end

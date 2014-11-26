@@ -4,7 +4,7 @@ class MedicalHistoriesController < ApplicationController
   # GET /medical_histories
   # GET /medical_histories.json
   def index
-    @medical_histories = MedicalHistory.all
+    @medical_histories = MedicalHistory.all.order("created_at DESC")
 
   end
 
@@ -56,9 +56,18 @@ class MedicalHistoriesController < ApplicationController
   # DELETE /medical_histories/1.json
   def destroy
     @medical_history.destroy
-    respond_to do |format|
-      format.html { redirect_to medical_histories_url, notice: 'Medical history was successfully destroyed.' }
-      format.json { head :no_content }
+    if params[:patient]!=0 or params[:patient]!=""
+      respond_to do |format|
+        format.html { redirect_to patient_url(params[:patient]), notice: 'Medical history was successfully deleted.' }
+        binding.pry
+
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to medical_histories_url, notice: 'Medical history was successfully deleted.' }
+        format.json { head :no_content }
+      end
     end
   end
 
