@@ -28,17 +28,17 @@
 
   <div class="field form-group">
     <%= f.file_field :image , accept: 'image/png,image/gif,image/jpeg',onchange: "readURL(this);"%>
-    <div class="thumpnails">
 
-      <%= 
-      if @patient.image?
-        image_tag(@patient.image_url, id: "img_prev", class: "img-thumpnail")
-      else
-        image_tag("default.png", id: "img_prev", alt: "no image")
-        end %>
-        <%= f.hidden_field :image_cache %>
 
-      </div>
+    <%= 
+    if @patient.image?
+      image_tag(@patient.image_url, id: "img_prev", class: "img-thumbnail")
+    else
+      image_tag("default.png", id: "img_prev", alt: "no image")
+      end %>
+      <%= f.hidden_field :image_cache %>
+
+
     </div>
     <div class="actions">
       <%= f.submit %>
