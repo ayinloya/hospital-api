@@ -11,9 +11,8 @@ class Patient < ActiveRecord::Base
 
 
 
-  def self.search(q)
-    # self.where("name like #{q}")
-    where("name like ?", "%#{q}%") 
+  def self.search(search)
+    where(['name like ?', "%#{search}%"]) 
   end
 
 end
