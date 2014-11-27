@@ -13,36 +13,91 @@
 </div>
 <% end %>
 
-<div class="field form-group">
-  <%= f.label :bp %><br>
-  <%= f.text_field :bp, class: "form-control" %>
+<div class="row">
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-heading dark-grey">
+        <h4><b>Vitals</b></h4>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="form-group col-xs-4">
+            <%= f.label "BP", class: "col-sm-1 control-label" %>
+            <%= f.text_field :bp, class: "form-control" %>
+
+          </div>
+
+          <div class="field form-group col-xs-4">
+            <%= f.label :temperature, class: "col-sm-1 control-label" %>
+
+            <%= f.text_field :temperature, class: "form-control" %>
+          </div>
+
+          <div class="field form-group col-xs-4">
+            <%= f.label :weight,class: "col-sm-1 control-label" %>
+            <%= f.text_field :weight, class: "form-control" %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
-<div class="field form-group">
-  <%= f.label :temperature %><br>
-  <%= f.text_field :temperature, class: "form-control" %>
+
+<div class="row">
+
+  <div class="field form-group col-md-5">
+
+    <div class="panel panel-default">
+      <div class="panel-heading dark-gray">
+        <h4><%= f.label "signs and symptoms" %></h4>
+      </div>
+      <%= f.text_area :signsymptoms, placeholder: "enter all signs and symptoms here", class: "form-control", rows: "5" %>
+    </div>
+
+  </div>
+
+  <div class="field form-group col-md-5">
+
+    <div class="panel panel-default">
+      <div class="panel-heading dark-gray">
+        <h4><%= f.label :diagnosis %></h4>
+      </div>
+      <%= f.text_area :diagnosis, placeholder: "enter all diagnosis here", class: "form-control", rows: "5" %>
+    </div>
+
+  </div>
+
+  <div class="col-md-1"></div>
 </div>
-<div class="field form-group">
-  <%= f.label :weight %><br>
-  <%= f.text_field :weight, class: "form-control" %>
+
+<div class="row">
+  <div class="field form-group col-md-5">
+
+    <div class="panel panel-default">
+      <div class="panel-heading dark-gray">
+        <h4><%= f.label :drugs %></h4>
+      </div>
+      <%= f.text_area :drugs, placeholder: "enter all drugs here", class: "form-control", rows: "5" %>
+    </div>
+
+  </div>
+
+  <div class="field form-group col-md-5">
+
+    <div class="panel panel-default">
+      <div class="panel-heading dark-gray">
+        <h4> <%= f.label "lab Tests" %></h4>
+      </div>
+      <%= f.text_area :labTest, placeholder: "enter all lab tests here", class: "form-control", rows: "5" %>
+    </div>
+
+  </div>
+  <%= f.hidden_field :patient_id %>
+
 </div>
-<div class="field form-group">
-  <%= f.label :signsymptoms %><br>
-  <%= f.text_area :signsymptoms, class: "form-control", rows: "5" %>
-</div>
-<div class="field form-group">
-  <%= f.label :diagnosis %><br>
-  <%= f.text_area :diagnosis, class: "form-control", rows: "5" %>
-</div>
-<div class="field form-group">
-  <%= f.label :drugs %><br>
-  <%= f.text_area :drugs, class: "form-control", rows: "4" %>
-</div>
-<div class="field form-group">
-  <%= f.label :labTest %><br>
-  <%= f.text_area :labTest, class: "form-control", rows: "5" %>
-</div>
-<%= f.hidden_field :patient_id %>
 <div class="actions">
-  <%= f.submit nil %>
+  <%= f.submit nil, class: "btn btn-default" %>
 </div>
 <% end %>

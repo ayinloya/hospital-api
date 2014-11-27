@@ -1,38 +1,56 @@
-
 <div class="row">
   <p id="notice"><%= notice %></p>
 
 
+  <div class="panel panel-default">
+    <div class="panel-heading"> <h4>Vitals</h4> </div>
+    <div class="panel-body">
+      <p>
+        <strong>BP:</strong>
+        <%= @medical_history.bp %>
+      </p>
 
-  <p class="">
-    <strong>BP:</strong>
-    <%= @medical_history.bp %>
-  </p>
+      <p>
+        <strong>Temperature:</strong>
+        <%= @medical_history.temperature %>
+      </p>
 
-  <p>
-    <strong>Temperature:</strong>
-    <%= @medical_history.temperature %>
-  </p>
+      <p>
+        <strong>Weight:</strong>
+        <%= @medical_history.weight %>
+      </p>
+    </div>
+  </div>
 
-  <p>
-    <strong>Weight:</strong>
-    <%= @medical_history.weight %>
-  </p>
+  <div class="panel panel-default">
 
-  <p>
-    <strong>Signs and symptoms:</strong>
-    <%= @medical_history.signsymptoms %>
-  </p>
+    <div class="panel-heading">
+      <strong>Signs and symptoms:</strong>
+    </div>
+    <div class="panel-body">
+      <%= @medical_history.signsymptoms %>
+    </div>
 
-  <p>
-    <strong>Diagnosis:</strong>
-    <%= @medical_history.diagnosis %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Medications:</strong>
-    <%= @medical_history.drugs %>
-  </p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+
+      <strong>Diagnosis:</strong>
+    </div>
+    <div class="panel-body">
+      <%= @medical_history.diagnosis %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <strong>Medications:</strong>
+    </div>
+    <div class="panel-body">
+      <%= @medical_history.drugs %>
+    </div>
+  </div>
 
   <p>
     <strong>Lab test:</strong>

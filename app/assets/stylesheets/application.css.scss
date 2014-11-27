@@ -28,6 +28,13 @@ body{
   height: 190px;
 }
 
+
+$green : #1abc9c;
+
+panel-heading{
+  background-color: $green;
+}
+
 /*
 .table-head {
   background-color: blue;

@@ -1,11 +1,8 @@
-<div class="row">
 
-  <div class="col-md-1"></div>
-  <div class="col-md-8">
-    <h1>New medical_history</h1>
 
-    <%= render 'form' %>
+<h2 class="text-center">New medical history for <%= @medical_history.patient.name %></h2>
 
-    <%= link_to 'Back', patient_path(@medical_history.patient_id) %>
-  </div>
-</div>
+<%= render 'form' %>
+
+<%= link_to 'Back', patient_path(@medical_history.patient_id),class: "btn btn-default" %>
+
