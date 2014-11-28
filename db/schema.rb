@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118170051) do
+ActiveRecord::Schema.define(version: 20141128100747) do
+
+  create_table "hospitals", force: true do |t|
+    t.string   "name"
+    t.string   "region"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "medical_histories", force: true do |t|
     t.string   "bp"
@@ -24,8 +31,10 @@ ActiveRecord::Schema.define(version: 20141118170051) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "patient_id"
+    t.integer  "hospital_id"
   end
 
+  add_index "medical_histories", ["hospital_id"], name: "index_medical_histories_on_hospital_id"
   add_index "medical_histories", ["patient_id"], name: "index_medical_histories_on_patient_id"
 
   create_table "patients", force: true do |t|
