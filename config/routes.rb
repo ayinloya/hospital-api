@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :hospitals
+
   resources :patients
 
   resources :medical_histories
