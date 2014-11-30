@@ -19,7 +19,7 @@
       </thead>
 
 
-      <tbody class="panel-body">
+      <tbody class="panel-body" id="medical-histories-list">
         <% i=0 %>
         <% @medical_histories.each do |medical_history| %>
         <tr>
@@ -35,7 +35,9 @@
 
         </tbody>
       </table>
-
+      <div id="infinite-scrolling">
+        <%= will_paginate @medical_histories%>
+      </div>
       <br>
 
       <%= link_to 'New Medical history', new_medical_history_path , class: "btn btn-default" %>

@@ -1,0 +1,7 @@
+$('#patients-list').append('<%= j render @patient %>');
+<% if @patient.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate @patient %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>

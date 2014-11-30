@@ -1,0 +1,7 @@
+$('#medical-histories-list').append('<%= j render @medical_histories %>');
+<% if @medical_histories.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate @medical_histories %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>

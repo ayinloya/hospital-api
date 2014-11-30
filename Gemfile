@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+# gems for styling
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
@@ -18,6 +20,10 @@ gem 'twitter-bootstrap-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
+#gem for pagination
+gem 'will_paginate'
+
+gem 'bootstrap-will_paginate'
 
 # Uploader
 

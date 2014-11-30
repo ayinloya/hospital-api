@@ -4,7 +4,7 @@ class MedicalHistoriesController < ApplicationController
   # GET /medical_histories
   # GET /medical_histories.json
   def index
-    @medical_histories = MedicalHistory.all.order("created_at DESC")
+    @medical_histories = MedicalHistory..paginate(page: params[:page], per_page: 16).order('created_at DESC')
 
   end
 
