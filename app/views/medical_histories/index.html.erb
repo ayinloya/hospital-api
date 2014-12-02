@@ -20,6 +20,7 @@
 
 
       <tbody class="panel-body" id="medical-histories-list">
+        <div class="page-delimiter first-page" data-page="<%= params[:page] || 2 %>"></div>
         <% i=0 %>
         <% @medical_histories.each do |medical_history| %>
         <tr>

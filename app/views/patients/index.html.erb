@@ -8,12 +8,12 @@
 <% end %>
 
 <div class="col-md-12">
-  <h1>Listing of patients</h1>
+  <h1>List of Patients</h1>
   <%= link_to 'New Patient', new_patient_path , class: "btn btn-primary" %><br>
   <div class="row" id="patients-list">
-    <div class="page-delimiter first-page" data-page="<%= params[:page] || 2 %>"></div>
+    <div class="page-delimiter first-page" data-page="<%= params[:page] || 1 %>"></div>
     <% @patient.each do |patient| %>
-    <div class="col-sm-6 col-md-3">
+    <div class="col-xs-12 col-sm-6 col-md-3">
       <div class="thumpnail">
         <%= link_to patient do %>
         <%= if patient.image? 

@@ -4,8 +4,11 @@ class MedicalHistoriesController < ApplicationController
   # GET /medical_histories
   # GET /medical_histories.json
   def index
-    @medical_histories = MedicalHistory..paginate(page: params[:page], per_page: 16).order('created_at DESC')
-
+    @medical_histories = MedicalHistory.paginate(page: params[:page], per_page: 16).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /medical_histories/1
@@ -32,6 +35,7 @@ class MedicalHistoriesController < ApplicationController
       if @medical_history.save
         format.html { redirect_to @medical_history, notice: 'Medical history was successfully created.' }
         format.json { render :show, status: :created, location: @medical_history }
+
       else     format.html { render :new }
         format.json { render json: @medical_history.errors, status: :unprocessable_entity }
       end
